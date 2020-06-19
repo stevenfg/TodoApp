@@ -1,0 +1,28 @@
+<h1>This is the todo page</h1>
+
+    {% for todo_item in all_items %}
+        {{ todo_item.content }}
+                <form action="/deleteTodo/{{todo_item.id}}/"
+                  style="display: inline;"
+                  method="post"></td>{% csrf_token %}
+                <input type="submit" value="delete" name="Delete"/></td>
+                
+                </form>
+    {% endfor %}
+
+<form action="/addTodo/" method="post">{% csrf_token %}
+    <input type="text" name="content"/>
+    <input type="submit" value="Add" name="Add"/>
+
+</form>
+
+<style>
+    table,tr,td,th{
+
+    border-collapse: inherit ;
+    margin-left: 40%;
+    background-color: black;
+
+
+}
+</style>
